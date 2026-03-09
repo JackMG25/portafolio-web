@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack | Desarrollador de Software</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: { cyan: '#22d3ee', purple: '#a855f7', dark: '#030712' } },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            mono: ['Fira Code', 'ui-monospace'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+            'blink': 'blink 0.8s step-end infinite',
+          },
+          keyframes: {
+            blink: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0' } },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#030712] text-white font-sans antialiased overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+      <a href="#inicio" class="text-xl font-bold font-mono shrink-0">
+        <span class="text-cyan-400">&lt;</span>Jack<span class="text-cyan-400">/&gt;</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
+        <li><a href="#inicio"       class="nav-link" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="#sobre-mi"     class="nav-link" data-i18n="nav.about">Sobre mi</a></li>
+        <li><a href="#proyectos"    class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+        <li><a href="#tecnologias"  class="nav-link" data-i18n="nav.tech">Tecnologias</a></li>
+        <li><a href="#testimonios"  class="nav-link" data-i18n="nav.testimonials">Testimonios</a></li>
+        <li><a href="#contacto"     class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+      <div class="hidden md:flex items-center gap-3">
+        <button id="lang-toggle" class="lang-btn" aria-label="Cambiar idioma">
+          <span id="lang-flag">&#127466;&#127480;</span>
+          <span id="lang-label" class="font-mono text-xs font-semibold">ES</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <a href="#contacto" class="btn-primary text-sm" data-i18n="nav.hire">Contratame</a>
+      </div>
+      <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 ml-auto" aria-label="Abrir menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-gray-950/95 backdrop-blur-md border-t border-gray-800">
+      <ul class="flex flex-col items-center gap-5 ñpy-7 text-gray-300 font-medium">
+        <li><a href="#inicio"       class="mobile-link" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="#sobre-mi"     class="mobile-link" data-i18n="nav.about">Sobre mi</a></li>
+        <li><a href="#proyectos"    class="mobile-link" data-i18n="nav.projects">Proyectos</a></li>
+        <li><a href="#tecnologias"  class="mobile-link" data-i18n="nav.tech">Tecnologias</a></li>
+        <li><a href="#testimonios"  class="mobile-link" data-i18n="nav.testimonials">Testimonios</a></li>
+        <li><a href="#contacto"     class="mobile-link" data-i18n="nav.contact">Contacto</a></li>
+        <li>
+          <button id="lang-toggle-mobile" class="lang-btn">
+            <span id="lang-flag-mobile">&#127466;&#127480;</span>
+            <span id="lang-label-mobile" class="font-mono text-xs font-semibold">ES</span>
+          </button>
+        </li>
+        <li><a href="#contacto" class="btn-primary" data-i18n="nav.hire">Contratame</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('img/fondo.jpg');"></div>
+    <div class="absolute inset-0 bg-[#030712]/82"></div>
+    <div class="orb orb-cyan  absolute top-1/4  left-1/4  -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="orb orb-purple absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-14">
+      <div class="flex-1 text-center lg:text-left">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-400 text-sm font-mono mb-6 reveal" data-i18n="hero.available">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse-slow inline-block"></span>
+          Disponible para proyectos
+        </span>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight mb-4 reveal">
+          <span data-i18n="hero.greeting">Hola, soy</span>
+          <span class="gradient-text block sm:inline"> Jack</span>
+        </h1>
+        <div class="h-10 flex items-center justify-center lg:justify-start mb-6 reveal">
+          <span class="text-xl sm:text-2xl font-mono text-gray-300">
+            <span id="typing-text" class="text-cyan-400 font-semibold"></span>
+            <span class="animate-blink text-cyan-400">|</span>
+          </span>
+        </div>
+        <p class="max-w-xl text-gray-400 text-base sm:text-lg leading-relaxed mb-10 reveal" data-i18n="hero.desc">
+          Construyo sistemas <strong class="text-white">POS</strong>, plataformas web y soluciones digitales a medida para negocios que quieren crecer y automatizar sus procesos.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 reveal">
+          <a href="#proyectos" class="btn-primary" data-i18n="hero.btn1">Ver proyectos
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#contacto" class="btn-outline" data-i18n="hero.btn2">Contactame</a>
+        </div>
+      </div>
+      <div class="reveal flex-shrink-0">
+        <div class="profile-photo-wrap">
+          <img src="img/perfil1.jpeg" alt="Foto de Jack" class="profile-photo" />
+          <div class="profile-ring"></div>
+          <div class="profile-badge">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse-slow inline-block"></span>
+            <span class="text-xs font-semibold text-green-400" data-i18n="hero.open">Open to work</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 text-xs animate-bounce z-10">
+      <span>Scroll</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="about.tag">// sobre mi</span>
+        <h2 class="section-title" data-i18n="about.title">Quien soy?</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-14 items-center mt-14">
+        <div class="reveal flex flex-col items-center gap-6">
+          <div class="relative w-72 h-80 sm:w-80 sm:h-96 mx-auto">
+            <img src="img/perfil2.jpeg" alt="Jack" class="w-full h-full object-cover object-top rounded-2xl border-2 border-cyan-400/20" />
+            <div class="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-purple-500/20" style="z-index:-1"></div>
+          </div>
+          <div class="grid grid-cols-3 gap-4 w-full max-w-xs">
+            <div class="stat-card"><span class="stat-num">3+</span><span class="stat-label" data-i18n="about.years">Anos exp.</span></div>
+            <div class="stat-card"><span class="stat-num">10+</span><span class="stat-label" data-i18n="about.projects">Proyectos</span></div>
+            <div class="stat-card"><span class="stat-num">100%</span><span class="stat-label" data-i18n="about.commit">Compromiso</span></div>
+          </div>
+        </div>
+        <div class="reveal space-y-5">
+          <p class="text-gray-300 text-base sm:text-lg leading-relaxed" data-i18n="about.p1">Soy un desarrollador apasionado por crear herramientas que <strong class="text-white">resuelven problemas reales</strong> en restaurantes, tiendas y negocios en general.</p>
+          <p class="text-gray-400 leading-relaxed" data-i18n="about.p2">Mi enfoque esta en construir sistemas rapidos, intuitivos y faciles de mantener. Desde un punto de venta hasta un panel de administracion completo, entrego codigo limpio y productos que los usuarios aman usar.</p>
+          <ul class="space-y-3 pt-2">
+            <li class="flex items-center gap-3 text-gray-300"><span class="check-icon">&#10003;</span><span data-i18n="about.li1">Sistemas POS para restaurantes y retail</span></li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="check-icon">&#10003;</span><span data-i18n="about.li2">Aplicaciones web a medida para tu negocio</span></li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="check-icon">&#10003;</span><span data-i18n="about.li3">Integracion de bases de datos y APIs REST</span></li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="check-icon">&#10003;</span><span data-i18n="about.li4">Codigo limpio, escalable y bien documentado</span></li>
+          </ul>
+          <a href="#contacto" class="btn-primary inline-flex mt-4" data-i18n="about.cta">Hablemos de tu proyecto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="py-24 px-6 bg-gray-950/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="projects.tag">// proyectos</span>
+        <h2 class="section-title" data-i18n="projects.title">Trabajo reciente</h2>
+        <p class="section-subtitle" data-i18n="projects.subtitle">Soluciones reales construidas para negocios reales.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+
+        <article class="project-card reveal">
+          <div class="project-img-wrap"><img src="img/img_proyectos/imguni1.PNG" alt="Sistema POS" class="project-img" /><div class="project-overlay"><a href="#" class="btn-primary text-sm" data-i18n="projects.view">Ver proyecto</a></div></div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="projects.p1.title">Sistema POS para Restaurante</h3>
+            <p class="project-desc" data-i18n="projects.p1.desc">Punto de venta: gestion de mesas, pedidos en tiempo real, facturacion y reportes de ventas diarios.</p>
+            <div class="project-tags"><span class="tag">Vue.js</span><span class="tag">Node.js</span><span class="tag">MySQL</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img-wrap"><img src="img/img_proyectos/proyecto1.png" alt="Visor de Cocina" class="project-img" /><div class="project-overlay"><a href="#" class="btn-primary text-sm" data-i18n="projects.view">Ver proyecto</a></div></div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="projects.p2.title">Visor de Cocina (KDS)</h3>
+            <p class="project-desc" data-i18n="projects.p2.desc">Pantalla de cocina en tiempo real con pedidos activos, prioridades, tiempos y estados de preparacion.</p>
+            <div class="project-tags"><span class="tag">JavaScript</span><span class="tag">WebSockets</span><span class="tag">CSS3</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img-wrap"><img src="img/img_proyectos/nexura2.PNG" alt="Inventario" class="project-img" /><div class="project-overlay"><a href="#" class="btn-primary text-sm" data-i18n="projects.view">Ver proyecto</a></div></div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="projects.p3.title">Sistema de Gestion de Inventario</h3>
+            <p class="project-desc" data-i18n="projects.p3.desc">Panel para almacenes: stock en tiempo real, alertas de reabastecimiento e historial de movimientos exportable.</p>
+            <div class="project-tags"><span class="tag">Vue.js</span><span class="tag">Node.js</span><span class="tag">MySQL</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img-wrap"><img src="img/img_proyectos/nexura1.PNG" alt="Tienda Nexura" class="project-img" /><div class="project-overlay"><a href="#" class="btn-primary text-sm" data-i18n="projects.view">Ver proyecto</a></div></div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="projects.p4.title">Tienda Online  Nexura</h3>
+            <p class="project-desc" data-i18n="projects.p4.desc">E-commerce para marca de ropa: catalogo, carrito de compras, filtros por categoria y pasarela de pago.</p>
+            <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img-wrap"><img src="img/img_proyectos/juegonave1.png" alt="Misil Game" class="project-img" /><div class="project-overlay"><a href="#" class="btn-primary text-sm" data-i18n="projects.view">Ver proyecto</a></div></div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="projects.p5.title">Misil Game</h3>
+            <p class="project-desc" data-i18n="projects.p5.desc">Videojuego 2D de nave espacial en Python con Pygame. Disparos, animaciones y sistema de puntuacion.</p>
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">Pygame</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-img-wrap"><img src="img/img_proyectos/paginapintura.png" alt="Servicio Pintura" class="project-img" /><div class="project-overlay"><a href="#" class="btn-primary text-sm" data-i18n="projects.view">Ver proyecto</a></div></div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="projects.p6.title">Web Servicio de Pintura</h3>
+            <p class="project-desc" data-i18n="projects.p6.desc">Landing page para empresa de pintura: portafolio de trabajos y formulario de cotizacion en linea.</p>
+            <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGIAS -->
+  <section id="tecnologias" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="tech.tag">// tecnologias</span>
+        <h2 class="section-title" data-i18n="tech.title">Mi stack</h2>
+        <p class="section-subtitle" data-i18n="tech.subtitle">Herramientas con las que construyo cada dia.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-12">
+        <div class="tech-card reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/html5/html5-original.svg" alt="HTML5" class="tech-icon"/><span class="tech-name">HTML5</span></div>
+        <div class="tech-card reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/css3/css3-original.svg" alt="CSS3" class="tech-icon"/><span class="tech-name">CSS3</span></div>
+        <div class="tech-card reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon"/><span class="tech-name">JavaScript</span></div>
+        <div class="tech-card reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/vuejs/vuejs-original.svg" alt="Vue.js" class="tech-icon"/><span class="tech-name">Vue.js</span></div>
+        <div class="tech-card reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-icon"/><span class="tech-name">Node.js</span></div>
+        <div class="tech-card reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/mysql/mysql-original.svg" alt="MySQL" class="tech-icon"/><span class="tech-name">MySQL</span></div>
+        <div class="tech-card reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/git/git-original.svg" alt="Git" class="tech-icon"/><span class="tech-name">Git</span></div>
+        <div class="tech-card reveal"><svg viewBox="0 0 32 32" class="tech-icon" xmlns="http://www.w3.org/2000/svg"><path d="M9 13.7q1.4-5.6 7-5.6c3.5 0 5.4 1.75 5.6 5.25.56-3.5 2.8-5.25 6.3-5.25 3.5 0 4.9 2.1 4.2 5.6l-3.64 12.6H24.5L28 14c.28-1.12-.28-1.68-1.4-1.68s-1.96.56-2.24 1.68L21.5 26.3h-3.85l3.5-12.32c.28-1.12-.28-1.68-1.4-1.68-1.12 0-1.96.56-2.24 1.68L14 26.3H10.2L13.7 14c.28-1.12-.28-1.68-1.4-1.68S10.34 12.88 10.06 14L6.56 26.3H2.7L9 13.7z" fill="#38bdf8"/></svg><span class="tech-name">Tailwind</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" class="py-24 px-6 bg-gray-950/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="test.tag">// testimonios</span>
+        <h2 class="section-title" data-i18n="test.title">Lo que dicen</h2>
+        <p class="section-subtitle" data-i18n="test.subtitle">Clientes que confiaron en mi trabajo.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+
+        <div class="testimonial-card reveal">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="img/testimonials/testimonials-1.jpg" alt="Carlos" class="testimonial-avatar"/>
+            <div><p class="font-semibold text-white text-sm">Carlos Mendoza</p><p class="text-xs text-cyan-400" data-i18n="test.role1">Dueno de Restaurante</p></div>
+          </div>
+          <div class="stars mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="test.q1">"El sistema POS transformo por completo nuestro servicio. La velocidad y facilidad de uso son increibles."</p>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="img/testimonials/testimonials-2.jpg" alt="Ana" class="testimonial-avatar"/>
+            <div><p class="font-semibold text-white text-sm">Ana Torres</p><p class="text-xs text-cyan-400" data-i18n="test.role2">Gerente de Tienda</p></div>
+          </div>
+          <div class="stars mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="test.q2">"El sistema de inventario nos ahorro horas de trabajo manual. Jack entrego exactamente lo que necesitabamos."</p>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="img/testimonials/testimonials-3.jpg" alt="Maria" class="testimonial-avatar"/>
+            <div><p class="font-semibold text-white text-sm">Maria Lopez</p><p class="text-xs text-cyan-400" data-i18n="test.role3">Emprendedora Digital</p></div>
+          </div>
+          <div class="stars mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="test.q3">"Mi tienda online quedo perfecta. Profesional, puntual y muy buen ojo para el diseno."</p>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="img/testimonials/testimonials-4.jpg" alt="Diego" class="testimonial-avatar"/>
+            <div><p class="font-semibold text-white text-sm">Diego Ramirez</p><p class="text-xs text-cyan-400" data-i18n="test.role4">CEO Startup</p></div>
+          </div>
+          <div class="stars mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="test.q4">"Excelente comunicacion durante todo el proyecto. El resultado supero nuestras expectativas."</p>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="img/testimonials/testimonials-5.jpg" alt="Luis" class="testimonial-avatar"/>
+            <div><p class="font-semibold text-white text-sm">Luis Paredes</p><p class="text-xs text-cyan-400" data-i18n="test.role5">Empresario</p></div>
+          </div>
+          <div class="stars mb-3">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="test.q5">"Muy recomendado. Soluciono problemas tecnicos complejos de forma rapida y eficiente."</p>
+        </div>
+
+        <div class="testimonial-card reveal flex flex-col items-center justify-center text-center gap-4 border-dashed">
+          <div class="w-14 h-14 rounded-full bg-cyan-400/10 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </div>
+          <p class="text-gray-400 text-sm" data-i18n="test.cta">Trabajaste conmigo? Deja tu testimonio</p>
+          <a href="#contacto" class="btn-outline text-sm" data-i18n="test.ctabtn">Escribir resena</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO  Formulario + Panel redes sociales -->
+  <section id="contacto" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="contact.tag">// contacto</span>
+        <h2 class="section-title" data-i18n="contact.title">Tienes un proyecto?</h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">Cuentame tu idea. Respondo en menos de 24 horas.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-10 mt-14">
+
+        <!-- Formulario (3/5) -->
+        <div class="lg:col-span-3 reveal">
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div class="form-group">
+                <label class="form-label" for="name" data-i18n="contact.f.name">Nombre</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email" data-i18n="contact.f.email">Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject" data-i18n="contact.f.subject">Asunto</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="En que puedo ayudarte?" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="contact.f.type">Tipo de proyecto</label>
+              <div class="flex flex-wrap gap-2 mt-2" id="project-type-btns">
+                <button type="button" class="type-badge active" data-i18n="contact.f.type1">Sistema POS</button>
+                <button type="button" class="type-badge" data-i18n="contact.f.type2">Web / Landing</button>
+                <button type="button" class="type-badge" data-i18n="contact.f.type3">Inventario</button>
+                <button type="button" class="type-badge" data-i18n="contact.f.type4">Otro</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message" data-i18n="contact.f.msg">Mensaje</label>
+              <textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Describe tu proyecto o cualquier duda..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full justify-center mt-2 py-3.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+              <span data-i18n="contact.f.send">Enviar mensaje</span>
+            </button>
+            <div id="form-success" class="form-success hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span data-i18n="contact.f.success">Mensaje enviado! Te respondere pronto.</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Panel contacto + redes (2/5) -->
+        <div class="lg:col-span-2 flex flex-col gap-6 reveal">
+
+          <div class="contact-info-card">
+            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-5" data-i18n="contact.direct">Contacto directo</h3>
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener" class="contact-info-row group">
+              <div class="contact-info-icon bg-green-500/10 text-green-400 group-hover:bg-green-500/20">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div><p class="text-xs text-gray-500">WhatsApp</p><p class="text-sm font-medium text-white">+52 123 456 7890</p></div>
+            </a>
+            <a href="mailto:jack@example.com" class="contact-info-row group">
+              <div class="contact-info-icon bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500/20">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div><p class="text-xs text-gray-500">Email</p><p class="text-sm font-medium text-white">jack@example.com</p></div>
+            </a>
+            <a href="https://github.com/jack" target="_blank" rel="noopener" class="contact-info-row group">
+              <div class="contact-info-icon bg-purple-500/10 text-purple-400 group-hover:bg-purple-500/20">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </div>
+              <div><p class="text-xs text-gray-500">GitHub</p><p class="text-sm font-medium text-white">@jack-dev</p></div>
+            </a>
+          </div>
+
+          <div class="contact-info-card">
+            <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-5" data-i18n="contact.social">Redes sociales</h3>
+            <div class="grid grid-cols-3 gap-3">
+              <a href="https://linkedin.com/in/jack" target="_blank" rel="noopener" class="social-pill group">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <span class="text-xs">LinkedIn</span>
+              </a>
+              <a href="https://instagram.com/jack" target="_blank" rel="noopener" class="social-pill group">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                <span class="text-xs">Instagram</span>
+              </a>
+              <a href="https://facebook.com/jack" target="_blank" rel="noopener" class="social-pill group">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span class="text-xs">Facebook</span>
+              </a>
+              <a href="https://youtube.com/@jack" target="_blank" rel="noopener" class="social-pill group">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span class="text-xs">YouTube</span>
+              </a>
+              <a href="https://tiktok.com/@jack" target="_blank" rel="noopener" class="social-pill group">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                <span class="text-xs">TikTok</span>
+              </a>
+              <a href="https://twitter.com/jack" target="_blank" rel="noopener" class="social-pill group">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span class="text-xs">Twitter / X</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="availability-card">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-green-400 animate-pulse-slow shrink-0"></span>
+              <div>
+                <p class="text-sm font-semibold text-white" data-i18n="contact.avail">Disponible ahora</p>
+                <p class="text-xs text-gray-500" data-i18n="contact.availSub">Proyectos freelance  Full-time</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800/60 py-8 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-sm">
+      <span>&copy; <span id="year"></span> Jack  <span data-i18n="footer.role">Desarrollador de Software</span></span>
+      <span class="font-mono"><span data-i18n="footer.made">Hecho con</span> <span class="text-cyan-400">codigo</span> y &#9749;</span>
+    </div>
+  </footer>
+
+  <!-- BOTON VOLVER ARRIBA -->
+  <button id="back-to-top" aria-label="Volver arriba" class="fixed bottom-8 right-6 z-50 p-3 rounded-full bg-cyan-400 text-gray-950 shadow-lg shadow-cyan-400/30 opacity-0 pointer-events-none hover:bg-cyan-300 transition-all duration-300 translate-y-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
