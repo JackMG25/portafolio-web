@@ -298,6 +298,8 @@ body {
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -306,39 +308,98 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(34,211,238,0.06);
 }
 
-/* Área de imagen */
-.project-img-wrap {
+/* ── Slider de imágenes ── */
+.project-slider {
   position: relative;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 260px;
   overflow: hidden;
+  background: #070d1a;
+  flex-shrink: 0;
 }
 
-.project-img-icon {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.slider-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-/* Overlay al hacer hover en la tarjeta */
-.project-overlay {
+.slider-img {
   position: absolute;
   inset: 0;
-  background: rgba(3,7,18,0.75);
-  backdrop-filter: blur(4px);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateX(100%);
+  z-index: 0;
+  will-change: transform;
+}
+
+.slider-img.active {
+  transform: translateX(0%);
+  z-index: 1;
+}
+
+/* Botones prev / next */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(3,7,18,0.70);
+  border: 1px solid rgba(34,211,238,0.3);
+  color: #22d3ee;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s, background 0.25s, border-color 0.25s;
 }
 
-.project-card:hover .project-overlay { opacity: 1; }
-.project-card:hover .project-img-icon { transform: scale(1.1); opacity: 0.4; }
+.slider-btn.slider-prev { left: 8px; }
+.slider-btn.slider-next { right: 8px; }
+
+.project-card:hover .slider-btn { opacity: 1; }
+
+.slider-btn:hover {
+  background: rgba(34,211,238,0.18);
+  border-color: #22d3ee;
+}
+
+/* Puntos indicadores */
+.slider-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+
+.slider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.slider-dot.active {
+  background: #22d3ee;
+  transform: scale(1.35);
+}
 
 /* Cuerpo de la tarjeta */
 .project-body {
-  padding: 1.25rem 1.5rem 1.5rem;
+  padding: 1.25rem 1.5rem 1rem;
+  flex: 1;
 }
 
 .project-title {
@@ -371,6 +432,42 @@ body {
   color: #22d3ee;
   font-size: 0.75rem;
   font-family: 'Fira Code', monospace;
+}
+
+/* ── Footer creativo con enlace ── */
+.project-footer {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: 'Fira Code', monospace;
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.25s ease, gap 0.25s ease;
+  letter-spacing: 0.02em;
+}
+
+.project-link .link-arrow {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s ease;
+}
+
+.project-link:hover {
+  color: #22d3ee;
+  gap: 0.75rem;
+}
+
+.project-link:hover .link-arrow {
+  transform: translateX(4px);
 }
 
 
@@ -620,11 +717,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-}
-.project-card:hover .project-img {
-  transform: scale(1.07);
-  opacity: 0.35;
 }
 
 
@@ -824,4 +916,392 @@ body {
 @keyframes pulse-green {
   0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
   50%       { opacity: 0.8; transform: scale(1.2); box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+
+
+/* ─────────────────────────────────────────
+   22. REACH-OUT CONTACT — tarjeta dividida
+───────────────────────────────────────── */
+
+/* Contenedor principal */
+.reach-card {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+@media (max-width: 900px) {
+  .reach-card { grid-template-columns: 1fr; }
+}
+
+/* ── Panel izquierdo ── */
+.reach-left {
+  padding: 3rem 2.5rem;
+  background: linear-gradient(160deg, #0d1829 0%, #060d1a 100%);
+  border-right: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.reach-heading {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: #f1f5f9;
+  line-height: 1.2;
+}
+
+.reach-subtext {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* Lista de info */
+.reach-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.reach-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reach-info-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.reach-icon-green  { background: rgba(74,222,128,0.08);  color: #4ade80; border: 1px solid rgba(74,222,128,0.15); }
+.reach-icon-cyan   { background: rgba(34,211,238,0.08);  color: #22d3ee; border: 1px solid rgba(34,211,238,0.15); }
+.reach-icon-purple { background: rgba(192,132,252,0.08); color: #c084fc; border: 1px solid rgba(192,132,252,0.15); }
+
+.reach-info-label {
+  display: block;
+  font-size: 0.68rem;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 2px;
+}
+
+.reach-info-value {
+  display: block;
+  font-size: 0.875rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+/* Badge disponibilidad */
+.reach-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(74,222,128,0.05);
+  border: 1px solid rgba(74,222,128,0.18);
+  border-radius: 9999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  color: #4ade80;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.reach-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+/* Fila de redes sociales */
+.reach-social-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.reach-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  color: #475569;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.reach-social-icon:hover {
+  background: rgba(34,211,238,0.08);
+  border-color: rgba(34,211,238,0.25);
+  color: #22d3ee;
+  transform: translateY(-2px);
+}
+
+/* ── Panel derecho ── */
+.reach-right {
+  padding: 3rem 2.5rem;
+  background: #070e1d;
+}
+
+.reach-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+}
+
+.reach-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 480px) {
+  .reach-form-grid           { grid-template-columns: 1fr; }
+  .reach-left, .reach-right  { padding: 2rem 1.5rem; }
+}
+
+/* Override de inputs */
+.reach-input {
+  background: rgba(255,255,255,0.025) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 10px !important;
+  padding: 0.75rem 1rem !important;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.reach-input:focus {
+  border-color: rgba(34,211,238,0.35) !important;
+  background: rgba(34,211,238,0.025) !important;
+  box-shadow: 0 0 0 3px rgba(34,211,238,0.07) !important;
+}
+
+.reach-input.invalid {
+  border-color: rgba(248,113,113,0.55) !important;
+}
+
+/* Botón enviar */
+.reach-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #22d3ee, #06b6d4);
+  color: #030712;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 24px rgba(34,211,238,0.22);
+  margin-top: 0.25rem;
+}
+
+.reach-submit-btn:hover {
+  background: linear-gradient(135deg, #67e8f9, #22d3ee);
+  box-shadow: 0 6px 36px rgba(34,211,238,0.40);
+  transform: translateY(-2px);
+}
+
+.reach-submit-btn:active  { transform: translateY(0); }
+
+.reach-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* ─────────────────────────────────────────
+   23. ABOUT — Órbita de stack
+───────────────────────────────────────── */
+
+/* Escena completa */
+.about-orbit-scene {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+/* Núcleo central */
+.orbit-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d1829, #111827);
+  border: 2px solid rgba(34,211,238,0.35);
+  box-shadow:
+    0 0 0 8px rgba(34,211,238,0.04),
+    0 0 30px rgba(34,211,238,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* Anillos orbitales */
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px dashed rgba(34,211,238,0.12);
+  transform: translate(-50%, -50%);
+  animation: orbit-spin linear infinite;
+}
+
+.orbit-ring-1 {
+  width: 224px;
+  height: 224px;
+  animation-duration: 18s;
+}
+
+.orbit-ring-2 {
+  width: 380px;
+  height: 380px;
+  animation-duration: 30s;
+  animation-direction: reverse;
+}
+
+@keyframes orbit-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Punto orbitante — posicionado por --deg */
+.orbit-ring-1 .orbit-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  margin-top: -24px;
+  margin-left: -24px;
+  transform: rotate(var(--deg)) translateX(112px) rotate(calc(-1 * var(--deg)));
+}
+
+.orbit-ring-2 .orbit-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  margin-top: -28px;
+  margin-left: -28px;
+  transform: rotate(var(--deg)) translateX(190px) rotate(calc(-1 * var(--deg)));
+}
+
+/* Burbuja circular */
+.orbit-bubble {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(9,17,34,0.92);
+  border: 1.5px solid rgba(34,211,238,0.18);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: default;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  position: relative;
+  z-index: 2;
+}
+
+.orbit-bubble-lg {
+  width: 60px;
+  height: 60px;
+}
+
+.orbit-bubble:hover {
+  border-color: rgba(34,211,238,0.55);
+  box-shadow: 0 0 18px rgba(34,211,238,0.22), 0 4px 20px rgba(0,0,0,0.4);
+  transform: scale(1.15);
+}
+
+.orbit-bubble img,
+.orbit-bubble svg {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px rgba(34,211,238,0.15));
+  transition: filter 0.25s;
+}
+
+.orbit-bubble-lg img,
+.orbit-bubble-lg svg {
+  width: 26px;
+  height: 26px;
+}
+
+.orbit-bubble:hover img,
+.orbit-bubble:hover svg {
+  filter: drop-shadow(0 0 8px rgba(34,211,238,0.45));
+}
+
+.orbit-bubble span {
+  font-size: 8px;
+  font-weight: 700;
+  color: #475569;
+  line-height: 1;
+  transition: color 0.25s;
+  white-space: nowrap;
+}
+
+.orbit-bubble:hover span { color: #94a3b8; }
+
+@media (max-width: 1024px) {
+  .about-orbit-scene { max-width: 400px; }
+  .orbit-ring-1 { width: 188px; height: 188px; }
+  .orbit-ring-2 { width: 320px; height: 320px; }
+  .orbit-ring-1 .orbit-dot { transform: rotate(var(--deg)) translateX(94px)  rotate(calc(-1 * var(--deg))); }
+  .orbit-ring-2 .orbit-dot { transform: rotate(var(--deg)) translateX(160px) rotate(calc(-1 * var(--deg))); }
+}
+
+@media (max-width: 640px) {
+  .about-orbit-scene { max-width: 320px; }
+  .orbit-ring-1 { width: 150px; height: 150px; }
+  .orbit-ring-2 { width: 258px; height: 258px; }
+  .orbit-ring-1 .orbit-dot { transform: rotate(var(--deg)) translateX(75px)  rotate(calc(-1 * var(--deg))); }
+  .orbit-ring-2 .orbit-dot { transform: rotate(var(--deg)) translateX(129px) rotate(calc(-1 * var(--deg))); }
+  .orbit-bubble     { width: 40px; height: 40px; }
+  .orbit-bubble-lg  { width: 46px; height: 46px; }
+  .orbit-bubble img,    .orbit-bubble svg    { width: 18px; height: 18px; }
+  .orbit-bubble-lg img, .orbit-bubble-lg svg { width: 22px; height: 22px; }
 }

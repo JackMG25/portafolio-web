@@ -34,7 +34,6 @@ const translations = {
     'hero.btn2':      'Contáctame',
     'hero.open':      'Open to work',
     /* Sobre mí */
-    'about.tag':      '// sobre mí',
     'about.title':    '¿Quién soy?',
     'about.years':    'Años exp.',
     'about.projects': 'Proyectos',
@@ -47,7 +46,6 @@ const translations = {
     'about.li4':      'Código limpio, escalable y bien documentado',
     'about.cta':      'Hablemos de tu proyecto',
     /* Proyectos */
-    'projects.tag':      '// proyectos',
     'projects.title':    'Trabajo reciente',
     'projects.subtitle': 'Soluciones reales construidas para negocios reales.',
     'projects.view':     'Ver proyecto',
@@ -510,6 +508,107 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Quitar clase 'invalid' al empezar a escribir */
   contactForm?.querySelectorAll('[required]').forEach(field => {
     field.addEventListener('input', () => field.classList.remove('invalid'));
+  });
+
+
+  /* ══════════════════════════════════════════
+     11. PROJECT IMAGE SLIDERS
+         Transición tipo slide lateral.
+         5 s entre imágenes. Pausa al hover.
+  ══════════════════════════════════════════ */
+  document.querySelectorAll('.project-slider').forEach(slider => {
+    const imgs    = slider.querySelectorAll('.slider-img');
+    const dots    = slider.querySelectorAll('.slider-dot');
+    const prevBtn = slider.querySelector('.slider-prev');
+    const nextBtn = slider.querySelector('.slider-next');
+
+    /* Si solo hay una imagen, eliminar controles */
+    if (imgs.length <= 1) {
+      prevBtn?.remove();
+      nextBtn?.remove();
+      slider.querySelector('.slider-dots')?.remove();
+      return;
+    }
+
+    let current     = 0;
+    let autoTimer   = null;
+    let isAnimating = false;
+    const DURATION  = 650; /* ms — debe coincidir con la transición inline */
+
+    function goTo(index, dir) {
+      if (isAnimating) return;
+      const prevIdx = current;
+      const nextIdx = ((index % imgs.length) + imgs.length) % imgs.length;
+      if (nextIdx === prevIdx) return;
+
+      isAnimating = true;
+      current = nextIdx;
+
+      /* dir: +1 nueva imagen entra por la DERECHA (avance)
+               -1 nueva imagen entra por la IZQUIERDA (retroceso) */
+      const direction = dir !== undefined ? dir : (nextIdx > prevIdx ? 1 : -1);
+      const enterFrom = direction > 0 ? 'translateX(100%)'  : 'translateX(-100%)';
+      const exitTo    = direction > 0 ? 'translateX(-100%)' : 'translateX(100%)';
+
+      /* 1. Colocar imagen entrante fuera de pantalla (sin transición) */
+      imgs[nextIdx].style.transition = 'none';
+      imgs[nextIdx].style.transform  = enterFrom;
+
+      /* 2. Forzar reflow */
+      void imgs[nextIdx].offsetWidth;
+
+      /* 3. Animar las dos imágenes simultáneamente */
+      const t = `transform ${DURATION}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+      imgs[nextIdx].style.transition = t;
+      imgs[prevIdx].style.transition = t;
+      imgs[nextIdx].style.transform  = 'translateX(0%)';
+      imgs[prevIdx].style.transform  = exitTo;
+
+      /* Actualizar dots */
+      dots[prevIdx]?.classList.remove('active');
+      dots[nextIdx]?.classList.add('active');
+
+      /* 4. Tras la animación, cementar estado con clases CSS */
+      setTimeout(() => {
+        /* Imagen saliente: quitar .active y limpiar estilos */
+        imgs[prevIdx].classList.remove('active');
+        imgs[prevIdx].style.transition = 'none';
+        imgs[prevIdx].style.transform  = '';
+        requestAnimationFrame(() => { imgs[prevIdx].style.transition = ''; });
+
+        /* Imagen entrante: cementar con .active, limpiar inline */
+        imgs[nextIdx].classList.add('active');
+        imgs[nextIdx].style.transition = '';
+        imgs[nextIdx].style.transform  = '';
+
+        isAnimating = false;
+      }, DURATION + 20);
+    }
+
+    function startAuto() {
+      autoTimer = setInterval(() => goTo(current + 1, 1), 5000);
+    }
+
+    function stopAuto() {
+      clearInterval(autoTimer);
+    }
+
+    prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); stopAuto(); goTo(current - 1, -1); startAuto(); });
+    nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); stopAuto(); goTo(current + 1,  1); startAuto(); });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        stopAuto();
+        goTo(i, i > current ? 1 : -1);
+        startAuto();
+      });
+    });
+
+    slider.addEventListener('mouseenter', stopAuto);
+    slider.addEventListener('mouseleave', startAuto);
+
+    startAuto();
   });
 
 });
