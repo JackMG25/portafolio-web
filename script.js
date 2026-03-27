@@ -29,7 +29,7 @@ const translations = {
     /* Hero */
     'hero.available': 'Disponible para proyectos',
     'hero.greeting':  'Hola, soy',
-    'hero.desc':      'Construyo sistemas <strong class="text-white">POS</strong>, plataformas web y soluciones digitales a medida para negocios que quieren crecer y automatizar sus procesos.',
+    'hero.desc':      'Desarrollo sistemas y soluciones digitales a medida que permiten a los negocios automatizar procesos, optimizar operaciones y crecer de forma sostenible.',
     'hero.btn1':      'Ver proyectos',
     'hero.btn2':      'Contáctame',
     'hero.open':      'Open to work',
@@ -49,18 +49,22 @@ const translations = {
     'projects.title':    'Trabajo reciente',
     'projects.subtitle': 'Soluciones reales construidas para negocios reales.',
     'projects.view':     'Ver proyecto',
-    'projects.p1.title': 'Sistema POS para Restaurante',
-    'projects.p1.desc':  'Punto de venta: gestión de mesas, pedidos en tiempo real, facturación y reportes de ventas diarios.',
-    'projects.p2.title': 'Visor de Cocina (KDS)',
-    'projects.p2.desc':  'Pantalla de cocina en tiempo real con pedidos activos, prioridades, tiempos y estados de preparación.',
-    'projects.p3.title': 'Sistema de Gestión de Inventario',
-    'projects.p3.desc':  'Panel para almacenes: stock en tiempo real, alertas de reabastecimiento e historial exportable.',
-    'projects.p4.title': 'Tienda Online — Nexura',
-    'projects.p4.desc':  'E-commerce para marca de ropa: catálogo, carrito de compras y pasarela de pago.',
-    'projects.p5.title': 'Misil Game',
-    'projects.p5.desc':  'Videojuego 2D en Python con Pygame. Disparos, animaciones y sistema de puntuación.',
-    'projects.p6.title': 'Web Servicio de Pintura',
-    'projects.p6.desc':  'Landing page para empresa de pintura con portafolio y formulario de cotización.',
+    'projects.p1.title': 'Sistema de Ventas Móvil',
+    'projects.p1.desc':  'Aplicación móvil para gestionar ventas en tiempo real, con reportes, filtros avanzados y sincronización en la nube desde cualquier ubicación.',
+    'projects.p2.title': 'Sistema CRM Empresarial',
+    'projects.p2.desc':  'Sistema empresarial que centraliza clientes, locales y operaciones, con control de ventas, facturación, egresos, cotizaciones y dashboards.',
+    'projects.p3.title': 'Sistema de Intranet',
+    'projects.p3.desc':  'Plataforma interna para docentes de la UNI que centraliza asistencias, carga horaria y recursos administrativos en un solo sistema.',
+    'projects.p4.title': 'Ecommerce: Tienda de Ropa ',
+    'projects.p4.desc':  'Tienda online para venta de ropa con catálogo autogestionable, pagos integrados, control de inventario y panel administrativo.',
+    'projects.p5.title': 'Sistema Punto de Venta',
+    'projects.p5.desc':  'Sistema para entornos de alta demanda que agiliza la toma de órdenes, reduce errores y mejora la atención en puntos de servicio.',
+    'projects.p6.title': 'Visor de Cocina',
+    'projects.p6.desc':  'Módulo en tiempo real para visualizar, priorizar y seguir pedidos en cocina, mejorando tiempos y eficiencia operativa.',
+    'projects.p7.title': 'Landing Page',
+    'projects.p7.desc':  'Página web enfocada en captar clientes potenciales mediante formularios estratégicos, diseño responsive y estructura orientada a conversión.',
+    'projects.p8.title': 'Página Web con CMS Personalizado',
+    'projects.p8.desc':  'Sitio web dinámico con CMS a medida para administrar noticias, documentos y horarios sin depender de conocimientos técnicos.',
     /* Stack */
     'tech.tag':      '// tecnologías',
     'tech.title':    'Mi stack',
@@ -100,9 +104,9 @@ const translations = {
     'contact.f.msg':     'Mensaje',
     'contact.f.send':    'Enviar mensaje',
     'contact.f.success': '¡Mensaje enviado! Te responderé pronto.',
+    'contact.f.error':   'No se pudo enviar el mensaje. Intenta nuevamente.',
     /* Footer */
     'footer.role': 'Desarrollador de Software',
-    'footer.made': 'Hecho con',
   },
 
   en: {
@@ -117,7 +121,7 @@ const translations = {
     /* Hero */
     'hero.available': 'Available for projects',
     'hero.greeting':  'Hi, I\'m',
-    'hero.desc':      'I build <strong class="text-white">POS</strong> systems, web platforms and custom digital solutions for businesses that want to grow and automate their processes.',
+    'hero.desc':      'I develop custom digital systems and solutions that allow businesses to automate processes, optimize operations and grow sustainably.',
     'hero.btn1':      'View projects',
     'hero.btn2':      'Contact me',
     'hero.open':      'Open to work',
@@ -139,18 +143,22 @@ const translations = {
     'projects.title':    'Recent work',
     'projects.subtitle': 'Real solutions built for real businesses.',
     'projects.view':     'View project',
-    'projects.p1.title': 'Restaurant POS System',
-    'projects.p1.desc':  'Full point-of-sale: table management, real-time orders, billing and daily sales reports.',
-    'projects.p2.title': 'Kitchen Display System (KDS)',
-    'projects.p2.desc':  'Real-time kitchen screen showing active orders, priorities, timers and preparation statuses.',
-    'projects.p3.title': 'Inventory Management System',
-    'projects.p3.desc':  'Warehouse dashboard: real-time stock, restocking alerts and exportable movement history.',
-    'projects.p4.title': 'Online Store — Nexura',
-    'projects.p4.desc':  'E-commerce for a clothing brand: catalog, shopping cart and payment gateway.',
-    'projects.p5.title': 'Missile Game',
-    'projects.p5.desc':  '2D spaceship game in Python with Pygame. Shooting, animations and score system.',
-    'projects.p6.title': 'Painting Service Website',
-    'projects.p6.desc':  'Landing page for painting company with portfolio and online quote form.',
+    'projects.p1.title': 'Mobile Sales System',
+    'projects.p1.desc':  'Mobile app for real-time sales management, with reports, advanced filters and cloud sync from anywhere.',
+    'projects.p2.title': 'Enterprise CRM System',
+    'projects.p2.desc':  'Business system that centralizes clients, branches and operations, with sales, billing, expenses, quotations and dashboards.',
+    'projects.p3.title': 'Intranet System',
+    'projects.p3.desc':  'Internal platform for UNI teachers that centralizes attendance, workload and administrative resources in one system.',
+    'projects.p4.title': 'Ecommerce: Clothing Store',
+    'projects.p4.desc':  'Online clothing store with self-managed catalog, integrated payments, inventory control and admin panel.',
+    'projects.p5.title': 'Point of Sale System',
+    'projects.p5.desc':  'System for high-demand environments that speeds up order taking, reduces errors and improves service flow.',
+    'projects.p6.title': 'Kitchen Viewer',
+    'projects.p6.desc':  'Real-time module to view, prioritize and track kitchen orders, improving response times and efficiency.',
+    'projects.p7.title': 'Landing Page',
+    'projects.p7.desc':  'Website focused on lead capture through strategic forms, responsive design and conversion-oriented structure.',
+    'projects.p8.title': 'Website with Custom CMS',
+    'projects.p8.desc':  'Dynamic website with a custom CMS to manage news, documents and schedules without technical knowledge.',
     /* Stack */
     'tech.tag':      '// technologies',
     'tech.title':    'My stack',
@@ -190,6 +198,7 @@ const translations = {
     'contact.f.msg':     'Message',
     'contact.f.send':    'Send message',
     'contact.f.success': 'Message sent! I\'ll get back to you soon.',
+    'contact.f.error':   'The message could not be sent. Please try again.',
     /* Footer */
     'footer.role': 'Software Developer',
     'footer.made': 'Made with',
@@ -324,8 +333,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /** Frases por idioma */
   const typingPhrases = {
-    es: ['Desarrollador de Software', 'Sistemas POS & Web', 'Soluciones para negocios', 'Full Stack Developer'],
-    en: ['Software Developer', 'POS & Web Systems', 'Business Solutions', 'Full Stack Developer'],
+    es: ['Desarrollador de Software', 'Sistemas moviles & Web', 'Soluciones para negocios', 'Full Stack Developer'],
+    en: ['Software Developer', 'moviles & Web Systems', 'Business Solutions', 'Full Stack Developer'],
   };
 
   let phrases     = typingPhrases['es'];
@@ -453,14 +462,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ══════════════════════════════════════════
      10. FORMULARIO DE CONTACTO
-         Simula el envío (sin backend) y muestra
-         mensaje de éxito.
+      Envío real con Formspree.
   ══════════════════════════════════════════ */
   const contactForm   = document.getElementById('contact-form');
   const formSuccess   = document.getElementById('form-success');
+  const formError     = document.getElementById('form-error');
+  const emailField    = document.getElementById('email');
+  const subjectField  = document.getElementById('subject');
+  const replyToField  = document.getElementById('formspree-replyto');
+  const hiddenSubject = document.getElementById('formspree-subject');
   const submitBtn     = contactForm?.querySelector('button[type="submit"]');
 
-  contactForm?.addEventListener('submit', (e) => {
+  function syncFormspreeFields() {
+    if (replyToField && emailField) {
+      replyToField.value = emailField.value.trim();
+    }
+
+    if (hiddenSubject) {
+      const fallbackSubject = currentLang === 'es'
+        ? 'Nuevo mensaje desde tu portafolio'
+        : 'New message from your portfolio';
+      const userSubject = subjectField?.value.trim();
+      hiddenSubject.value = userSubject ? `${fallbackSubject} | ${userSubject}` : fallbackSubject;
+    }
+  }
+
+  emailField?.addEventListener('input', syncFormspreeFields);
+  subjectField?.addEventListener('input', syncFormspreeFields);
+  syncFormspreeFields();
+
+  contactForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     /* Validación básica — resaltar campos vacíos */
@@ -475,6 +506,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     if (!valid) return;
 
+    syncFormspreeFields();
+
+    formSuccess?.classList.add('hidden');
+    formError?.classList.add('hidden');
+
     /* Estado de carga en el botón */
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -486,10 +522,44 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }
 
-    /* Simular delay de red (reemplazar con fetch real cuando tengas backend) */
-    setTimeout(() => {
+    const submitNatively = () => {
+      HTMLFormElement.prototype.submit.call(contactForm);
+    };
+
+    if (window.location.protocol === 'file:') {
+      submitNatively();
+      return;
+    }
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: new FormData(contactForm),
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Formspree request failed');
+      }
+
       contactForm.reset();
       formSuccess?.classList.remove('hidden');
+
+      /* Ocultar el mensaje de éxito después de 5 segundos */
+      setTimeout(() => formSuccess?.classList.add('hidden'), 5000);
+    } catch (error) {
+      console.error(error);
+
+      if (error instanceof TypeError) {
+        submitNatively();
+        return;
+      }
+
+      formError?.classList.remove('hidden');
+      setTimeout(() => formError?.classList.add('hidden'), 5000);
+    } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
         const t = translations[currentLang];
@@ -500,9 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span>${t['contact.f.send']}</span>
         `;
       }
-      /* Ocultar el mensaje de éxito después de 5 segundos */
-      setTimeout(() => formSuccess?.classList.add('hidden'), 5000);
-    }, 1200);
+    }
   });
 
   /* Quitar clase 'invalid' al empezar a escribir */

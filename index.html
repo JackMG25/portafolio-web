@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es" data-lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,27 +28,34 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="bg-[#030712] text-white font-sans antialiased overflow-x-hidden">
 
   <!-- NAVBAR -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
       <a href="#inicio" class="text-xl font-bold font-mono shrink-0">
         <span class="text-cyan-400">&lt;</span>Jack<span class="text-cyan-400">/&gt;</span>
       </a>
       <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
-        <li><a href="#inicio"       class="nav-link" data-i18n="nav.home">Inicio</a></li>
-        <li><a href="#sobre-mi"     class="nav-link" data-i18n="nav.about">Sobre mi</a></li>
-        <li><a href="#proyectos"    class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
-        <li><a href="#contacto"     class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+        <li><a href="#inicio" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-link" data-i18n="nav.about">Sobre mi</a></li>
+        <li><a href="#proyectos" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+        <li><a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
       </ul>
       <div class="hidden md:flex items-center gap-3">
         <button id="lang-toggle" class="lang-btn" aria-label="Cambiar idioma">
           <span id="lang-label" class="font-mono text-xs font-semibold">ES</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-gray-400" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
         </button>
         <a href="#contacto" class="btn-primary text-sm" data-i18n="nav.hire">Contratame</a>
       </div>
@@ -58,11 +66,11 @@
       </button>
     </div>
     <div id="mobile-menu" class="md:hidden hidden bg-gray-950/95 backdrop-blur-md border-t border-gray-800">
-      <ul class="flex flex-col items-center gap-5 ñpy-7 text-gray-300 font-medium">
-        <li><a href="#inicio"       class="mobile-link" data-i18n="nav.home">Inicio</a></li>
-        <li><a href="#sobre-mi"     class="mobile-link" data-i18n="nav.about">Sobre mi</a></li>
-        <li><a href="#proyectos"    class="mobile-link" data-i18n="nav.projects">Proyectos</a></li>
-        <li><a href="#contacto"     class="mobile-link" data-i18n="nav.contact">Contacto</a></li>
+      <ul class="flex flex-col items-center gap-5 py-7 text-gray-300 font-medium">
+        <li><a href="#inicio" class="mobile-link" data-i18n="nav.home">Inicio</a></li>
+        <li><a href="#sobre-mi" class="mobile-link" data-i18n="nav.about">Sobre mi</a></li>
+        <li><a href="#proyectos" class="mobile-link" data-i18n="nav.projects">Proyectos</a></li>
+        <li><a href="#contacto" class="mobile-link" data-i18n="nav.contact">Contacto</a></li>
         <li>
           <button id="lang-toggle-mobile" class="lang-btn">
             <span id="lang-flag-mobile">&#127466;&#127480;</span>
@@ -82,23 +90,26 @@
     <div class="orb orb-purple absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2"></div>
     <div class="relative z-10 max-w-5xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-14">
       <div class="flex-1 text-center lg:text-left">
-        
+
         <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight mb-4 reveal">
           <span data-i18n="hero.greeting">Hola, soy</span>
           <span class="gradient-text block sm:inline"> Jack</span>
         </h1>
-        <div class="h-10 flex items-center justify-center lg:justify-start mb-6 reveal">
+        <div class="h-10 flex items-center justify-center lg:justify-start mb-12 reveal">
           <span class="text-xl sm:text-2xl font-mono text-gray-300">
             <span id="typing-text" class="text-cyan-400 font-semibold"></span>
             <span class="animate-blink text-cyan-400">|</span>
           </span>
         </div>
         <p class="max-w-xl text-gray-400 text-base sm:text-lg leading-relaxed mb-10 reveal" data-i18n="hero.desc">
-          Construyo sistemas <strong class="text-white">POS</strong>, plataformas web y soluciones digitales a medida para negocios que quieren crecer y automatizar sus procesos.
+          Desarrollo sistemas y soluciones digitales a medida que permiten a los negocios automatizar procesos, optimizar operaciones y crecer de forma sostenible.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 reveal">
           <a href="#proyectos" class="btn-primary" data-i18n="hero.btn1">Ver proyectos
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </a>
           <a href="#contacto" class="btn-outline" data-i18n="hero.btn2">Contactame</a>
         </div>
@@ -107,19 +118,16 @@
         <div class="profile-photo-wrap">
           <img src="img/perfil1.jpeg" alt="Foto de Jack" class="profile-photo" />
           <div class="profile-ring"></div>
-          <div class="profile-badge">
-            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse-slow inline-block"></span>
-            <span class="text-xs font-semibold text-green-400" data-i18n="hero.open">Open to work</span>
-          </div>
+         
         </div>
       </div>
     </div>
-  
+
   </section>
 
   <!-- SOBRE MI -->
   <section id="sobre-mi" class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <!-- Cabecera centrada -->
       <div class="section-header reveal">
         <h2 class="section-title" data-i18n="about.title">&iquest;Qui&eacute;n soy?</h2>
@@ -130,14 +138,22 @@
 
         <!-- ── Columna izquierda: texto ── -->
         <div class="reveal flex flex-col gap-5">
-          <p class="text-gray-300 text-base sm:text-lg leading-relaxed" data-i18n="about.p1">Soy un desarrollador apasionado por crear herramientas que <strong class="text-white">resuelven problemas reales</strong> en restaurantes, tiendas y negocios.</p>
-          <p class="text-gray-400 leading-relaxed" data-i18n="about.p2">Mi enfoque est&aacute; en construir sistemas r&aacute;pidos, intuitivos y f&aacute;ciles de mantener. Desde un punto de venta hasta un panel de administraci&oacute;n completo, entrego c&oacute;digo limpio y productos que los usuarios aman usar.</p>
+          <p class="text-gray-300 text-base sm:text-lg leading-relaxed" data-i18n="about.p1">Soy un desarrollador
+            apasionado por crear herramientas que <strong class="text-white">resuelven problemas reales</strong> en
+            restaurantes, tiendas y negocios.</p>
+          <p class="text-gray-400 leading-relaxed" data-i18n="about.p2">Mi enfoque est&aacute; en construir sistemas
+            r&aacute;pidos, intuitivos y f&aacute;ciles de mantener. Desde un punto de venta hasta un panel de
+            administraci&oacute;n completo, entrego c&oacute;digo limpio y productos que los usuarios aman usar.</p>
 
           <ul class="space-y-3 pt-1">
-            <li class="flex items-center gap-3 text-gray-300 text-sm"><span class="check-icon">&checkmark;</span><span data-i18n="about.li1">Sistemas POS para restaurantes y retail</span></li>
-            <li class="flex items-center gap-3 text-gray-300 text-sm"><span class="check-icon">&checkmark;</span><span data-i18n="about.li2">Aplicaciones web a medida para tu negocio</span></li>
-            <li class="flex items-center gap-3 text-gray-300 text-sm"><span class="check-icon">&checkmark;</span><span data-i18n="about.li3">Integraci&oacute;n de bases de datos y APIs REST</span></li>
-            <li class="flex items-center gap-3 text-gray-300 text-sm"><span class="check-icon">&checkmark;</span><span data-i18n="about.li4">C&oacute;digo limpio, escalable y bien documentado</span></li>
+            <li class="flex items-center gap-3 text-gray-300 text-sm"><span class="check-icon">&checkmark;</span><span
+                data-i18n="about.li1">Sistemas POS para restaurantes y retail</span></li>
+            <li class="flex items-center gap-3 text-gray-300 text-sm"><span class="check-icon">&checkmark;</span><span
+                data-i18n="about.li2">Aplicaciones web a medida para tu negocio</span></li>
+            <li class="flex items-center gap-3 text-gray-300 text-sm"><span class="check-icon">&checkmark;</span><span
+                data-i18n="about.li3">Integraci&oacute;n de bases de datos y APIs REST</span></li>
+            <li class="flex items-center gap-3 text-gray-300 text-sm"><span class="check-icon">&checkmark;</span><span
+                data-i18n="about.li4">C&oacute;digo limpio, escalable y bien documentado</span></li>
           </ul>
         </div>
 
@@ -146,20 +162,22 @@
 
           <!-- Núcleo central -->
           <div class="orbit-core">
-            <span class="font-mono text-xs text-cyan-400 font-semibold leading-tight text-center">Tech<br/>Stack</span>
+            <span class="font-mono text-xs text-cyan-400 font-semibold leading-tight text-center">Tech<br />Stack</span>
           </div>
 
           <!-- Órbita 1 (interior) — 5 tecnologías -->
           <div class="orbit-ring orbit-ring-1">
             <div class="orbit-dot" style="--deg:0deg">
               <div class="orbit-bubble">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/react/react-original.svg" alt="React" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/react/react-original.svg"
+                  alt="React" />
                 <span>React</span>
               </div>
             </div>
             <div class="orbit-dot" style="--deg:72deg">
               <div class="orbit-bubble">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/nodejs/nodejs-original.svg"
+                  alt="Node.js" />
                 <span>Node.js</span>
               </div>
             </div>
@@ -177,7 +195,8 @@
             </div>
             <div class="orbit-dot" style="--deg:288deg">
               <div class="orbit-bubble">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/docker/docker-original.svg" alt="Docker" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/docker/docker-original.svg"
+                  alt="Docker" />
                 <span>Docker</span>
               </div>
             </div>
@@ -187,19 +206,22 @@
           <div class="orbit-ring orbit-ring-2">
             <div class="orbit-dot" style="--deg:0deg">
               <div class="orbit-bubble orbit-bubble-lg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/mysql/mysql-original.svg" alt="MySQL" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/mysql/mysql-original.svg"
+                  alt="MySQL" />
                 <span>MySQL</span>
               </div>
             </div>
             <div class="orbit-dot" style="--deg:40deg">
               <div class="orbit-bubble orbit-bubble-lg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/postgresql/postgresql-original.svg"
+                  alt="PostgreSQL" />
                 <span>PostgreSQL</span>
               </div>
             </div>
             <div class="orbit-dot" style="--deg:80deg">
               <div class="orbit-bubble orbit-bubble-lg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/firebase/firebase-plain.svg" alt="Firebase" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/firebase/firebase-plain.svg"
+                  alt="Firebase" />
                 <span>Firebase</span>
               </div>
             </div>
@@ -211,31 +233,36 @@
             </div>
             <div class="orbit-dot" style="--deg:160deg">
               <div class="orbit-bubble orbit-bubble-lg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/flutter/flutter-original.svg" alt="Flutter" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/flutter/flutter-original.svg"
+                  alt="Flutter" />
                 <span>Flutter</span>
               </div>
             </div>
             <div class="orbit-dot" style="--deg:200deg">
               <div class="orbit-bubble orbit-bubble-lg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/javascript/javascript-original.svg"
+                  alt="JavaScript" />
                 <span>JS</span>
               </div>
             </div>
             <div class="orbit-dot" style="--deg:240deg">
               <div class="orbit-bubble orbit-bubble-lg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/typescript/typescript-original.svg" alt="TypeScript" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/typescript/typescript-original.svg"
+                  alt="TypeScript" />
                 <span>TS</span>
               </div>
             </div>
             <div class="orbit-dot" style="--deg:280deg">
               <div class="orbit-bubble orbit-bubble-lg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/python/python-original.svg" alt="Python" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/python/python-original.svg"
+                  alt="Python" />
                 <span>Python</span>
               </div>
             </div>
             <div class="orbit-dot" style="--deg:320deg">
               <div class="orbit-bubble orbit-bubble-lg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/dart/dart-original.svg" alt="Dart" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/dart/dart-original.svg"
+                  alt="Dart" />
                 <span>Dart</span>
               </div>
             </div>
@@ -247,22 +274,99 @@
   </section>
 
   <!-- PROYECTOS -->
-  <section id="proyectos" class="py-24 px-6 bg-gray-950/50">
-    <div class="max-w-6xl mx-auto">
+  <section id="proyectos" class="py-24 px-2 bg-gray-950/50">
+    <div class="max-w-[1500px] mx-auto">
       <div class="section-header reveal">
         <h2 class="section-title" data-i18n="projects.title">Trabajo reciente</h2>
-        <p class="section-subtitle" data-i18n="projects.subtitle">Soluciones reales construidas para negocios reales.</p>
+
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-12">
 
-        <!-- Proyecto 1: POS -->
+        <!-- Proyecto 1: Sistema de Ventas Móvil -->
         <article class="project-card reveal">
           <div class="project-slider">
             <div class="slider-track">
-              <img src="img/img_proyectos/imguni01.PNG" alt="Sistema POS pantalla 1" class="slider-img active project-img" />
-              <img src="img/img_proyectos/imguni1.PNG"  alt="Sistema POS pantalla 2" class="slider-img project-img" />
-              <img src="img/img_proyectos/imguni2.PNG"  alt="Sistema POS pantalla 3" class="slider-img project-img" />
-              <img src="img/img_proyectos/imguni3.PNG"  alt="Sistema POS pantalla 4" class="slider-img project-img" />
+              <img src="img/img_proyectos/appmovil.jpeg" alt="Sistema de Ventas Móvil pantalla 1"
+                class="slider-img active project-img" />
+            </div>
+            <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
+            <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
+            <div class="slider-dots">
+              <span class="slider-dot active"></span>
+              <span class="slider-dot"></span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="projects.p1.title">Sistema de Ventas Móvil</h3>
+            <p class="project-desc" data-i18n="projects.p1.desc">Aplicación móvil para gestionar ventas en tiempo real,
+              con reportes, filtros avanzados y sincronización en la nube desde cualquier ubicación.</p>
+            <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span
+                class="tag">Supabase</span></div>
+          </div>
+            <!--
+            <div class="project-footer">
+              <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
+                Ver proyecto
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+            -->
+        </article>
+
+        <!-- Proyecto 2: Sistema CRM Empresarial -->
+        <article class="project-card reveal">
+          <div class="project-slider">
+            <div class="slider-track">
+              <img src="img/img_proyectos/crm.png" alt="Sistema CRM Empresarial pantalla 1"
+                class="slider-img active project-img" />
+              <img src="img/img_proyectos/crm1.png" alt="Sistema CRM Empresarial pantalla 2"
+                class="slider-img project-img" />
+                <img src="img/img_proyectos/crm2.png" alt="Sistema CRM Empresarial pantalla 2"
+                class="slider-img project-img" />
+            </div>
+            <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
+            <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
+            <div class="slider-dots">
+              <span class="slider-dot active"></span>
+              <span class="slider-dot"></span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="projects.p2.title">Sistema CRM Empresarial</h3>
+            <p class="project-desc" data-i18n="projects.p2.desc">Sistema empresarial que centraliza clientes, locales y
+              operaciones, con control de ventas, facturación, egresos, cotizaciones y dashboards.</p>
+            <div class="project-tags"><span class="tag">PHP</span><span class="tag">JS</span><span
+                class="tag">MySQL</span><span
+                class="tag">Bootstrap</span></div>
+          </div>
+            <!--
+            <div class="project-footer">
+              <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
+                Ver proyecto
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+            -->
+        </article>
+
+        <!-- Proyecto 3: Sistema de Intranet -->
+        <article class="project-card reveal">
+          <div class="project-slider">
+            <div class="slider-track">
+              <img src="img/img_proyectos/imguni01.PNG" alt="Sistema de Intranet pantalla 1"
+                class="slider-img active project-img" />
+              <img src="img/img_proyectos/imguni1.PNG" alt="Sistema de Intranet pantalla 2"
+                class="slider-img project-img" />
+              <img src="img/img_proyectos/imguni2.PNG" alt="Sistema de Intranet pantalla 3"
+                class="slider-img project-img" />
+              <img src="img/img_proyectos/imguni3.PNG" alt="Sistema de Intranet pantalla 4"
+                class="slider-img project-img" />
             </div>
             <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
             <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
@@ -274,24 +378,33 @@
             </div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="projects.p1.title">Sistema POS para Restaurante</h3>
-            <p class="project-desc" data-i18n="projects.p1.desc">Punto de venta: gestion de mesas, pedidos en tiempo real, facturacion y reportes de ventas diarios.</p>
-            <div class="project-tags"><span class="tag">Vue.js</span><span class="tag">Node.js</span><span class="tag">MySQL</span></div>
+            <h3 class="project-title" data-i18n="projects.p3.title">Sistema de Intranet</h3>
+            <p class="project-desc" data-i18n="projects.p3.desc">Plataforma interna para docentes de la UNI que
+              centraliza asistencias, carga horaria y recursos administrativos en un solo sistema.</p>
+            <div class="project-tags"><span class="tag">LARAVEL</span><span class="tag">Mysql</span><span
+                class="tag">JS</span></div>
           </div>
-          <div class="project-footer">
-            <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
-              Ver proyecto
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-          </div>
+            <!--
+            <div class="project-footer">
+              <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
+                Ver proyecto
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+            -->
         </article>
 
-        <!-- Proyecto 2: KDS -->
+        <!-- Proyecto 4: Ecommerce  -->
         <article class="project-card reveal">
           <div class="project-slider">
             <div class="slider-track">
-              <img src="img/img_proyectos/proyecto1.png" alt="Visor de Cocina 1" class="slider-img active project-img" />
-              <img src="img/img_proyectos/proyecto2.png" alt="Visor de Cocina 2" class="slider-img project-img" />
+              <img src="img/img_proyectos/nexura1.PNG" alt="Ecommerce Nexura pantalla 1"
+                class="slider-img active project-img" />
+              <img src="img/img_proyectos/nexura2.PNG" alt="Ecommerce Nexura pantalla 2"
+                class="slider-img project-img" />
             </div>
             <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
             <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
@@ -301,45 +414,37 @@
             </div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="projects.p2.title">Visor de Cocina (KDS)</h3>
-            <p class="project-desc" data-i18n="projects.p2.desc">Pantalla de cocina en tiempo real con pedidos activos, prioridades, tiempos y estados de preparacion.</p>
-            <div class="project-tags"><span class="tag">JavaScript</span><span class="tag">WebSockets</span><span class="tag">CSS3</span></div>
+            <h3 class="project-title" data-i18n="projects.p4.title">Ecommerce: Tienda de Ropa</h3>
+            <p class="project-desc" data-i18n="projects.p4.desc">Tienda online para venta de ropa con catálogo
+              autogestionable, pagos integrados, control de inventario y panel administrativo.</p>
+            <div class="project-tags"><span class="tag">MongoDB</span><span class="tag">Express.js</span><span
+                class="tag">React</span><span
+                class="tag">Node.js</span></div>
           </div>
-          <div class="project-footer">
-            <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
-              Ver proyecto
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Proyecto 3: Inventario -->
-        <article class="project-card reveal">
-          <div class="project-slider">
-            <div class="slider-track">
-              <img src="img/img_proyectos/nexura2.PNG" alt="Inventario" class="slider-img active project-img" />
+            <!--
+            <div class="project-footer">
+              <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
+                Ver proyecto
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </div>
-            <div class="slider-dots"></div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title" data-i18n="projects.p3.title">Sistema de Gestion de Inventario</h3>
-            <p class="project-desc" data-i18n="projects.p3.desc">Panel para almacenes: stock en tiempo real, alertas de reabastecimiento e historial de movimientos exportable.</p>
-            <div class="project-tags"><span class="tag">Vue.js</span><span class="tag">Node.js</span><span class="tag">MySQL</span></div>
-          </div>
-          <div class="project-footer">
-            <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
-              Ver proyecto
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-          </div>
+            -->
         </article>
 
-        <!-- Proyecto 4: Nexura store -->
+        <!-- Proyecto 5: Sistema Punto de Venta -->
         <article class="project-card reveal">
           <div class="project-slider">
             <div class="slider-track">
-              <img src="img/img_proyectos/nexura1.PNG" alt="Tienda Nexura 1" class="slider-img active project-img" />
-              <img src="img/img_proyectos/nexura2.PNG" alt="Tienda Nexura 2" class="slider-img project-img" />
+              <img src="img/img_proyectos/tpos.png" alt="Sistema Punto de Venta pantalla 1"
+                class="slider-img active project-img" />
+              <img src="img/img_proyectos/tpos1.png" alt="Sistema Punto de Venta pantalla 2"
+                class="slider-img project-img" />
+                <img src="img/img_proyectos/tpos2.png" alt="Sistema Punto de Venta pantalla 2"
+                class="slider-img project-img" />
+            
             </div>
             <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
             <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
@@ -349,58 +454,128 @@
             </div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="projects.p4.title">Tienda Online Nexura</h3>
-            <p class="project-desc" data-i18n="projects.p4.desc">E-commerce para marca de ropa: catalogo, carrito de compras, filtros por categoria y pasarela de pago.</p>
-            <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
+            <h3 class="project-title" data-i18n="projects.p5.title">Sistema Punto de Venta</h3>
+            <p class="project-desc" data-i18n="projects.p5.desc">Sistema para entornos de alta demanda que agiliza la
+              toma de órdenes, reduce errores y mejora la atención en puntos de servicio.</p>
+            <div class="project-tags"><span class="tag">PHP</span><span class="tag">JS</span><span
+                class="tag">MySQL</span><span
+                class="tag">Bootstrap</span></div>
           </div>
-          <div class="project-footer">
-            <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
-              Ver proyecto
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-          </div>
+            <!--
+            <div class="project-footer">
+              <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
+                Ver proyecto
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+            -->
         </article>
 
-        <!-- Proyecto 5: Juego -->
+        <!-- Proyecto 6: Visor de Cocina -->
         <article class="project-card reveal">
           <div class="project-slider">
             <div class="slider-track">
-              <img src="img/img_proyectos/juegonave1.png" alt="Misil Game" class="slider-img active project-img" />
+              <img src="img/img_proyectos/visor.png" alt="Visor de Cocina pantalla 1"
+                class="slider-img active project-img" />
             </div>
-            <div class="slider-dots"></div>
+            <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
+            <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
+            <div class="slider-dots">
+              <span class="slider-dot active"></span>
+              <span class="slider-dot"></span>
+            </div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="projects.p5.title">Misil Game</h3>
-            <p class="project-desc" data-i18n="projects.p5.desc">Videojuego 2D de nave espacial en Python con Pygame. Disparos, animaciones y sistema de puntuacion.</p>
-            <div class="project-tags"><span class="tag">Python</span><span class="tag">Pygame</span></div>
+            <h3 class="project-title" data-i18n="projects.p6.title">Visor de Cocina</h3>
+            <p class="project-desc" data-i18n="projects.p6.desc">Módulo en tiempo real para visualizar, priorizar y
+              seguir pedidos en cocina, mejorando tiempos y eficiencia operativa.</p>
+            <div class="project-tags"><span class="tag">PHP</span><span class="tag">JS</span><span class="tag">MySQL</span></div>
           </div>
+          <!--
           <div class="project-footer">
             <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
               Ver proyecto
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
           </div>
+          -->
         </article>
 
-        <!-- Proyecto 6: Pintura -->
+        <!-- Proyecto 7: Landing Page -->
         <article class="project-card reveal">
           <div class="project-slider">
             <div class="slider-track">
-              <img src="img/img_proyectos/paginapintura.png" alt="Servicio Pintura" class="slider-img active project-img" />
+              <img src="img/img_proyectos/landigpage.jpeg" alt="Landing Page" class="slider-img active project-img" />
+              <img src="img/img_proyectos/landigpage2.jpeg" alt="Landing Page" class="slider-img project-img" />
             </div>
+            <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
+            <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
             <div class="slider-dots"></div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="projects.p6.title">Web Servicio de Pintura</h3>
-            <p class="project-desc" data-i18n="projects.p6.desc">Landing page para empresa de pintura: portafolio de trabajos y formulario de cotizacion en linea.</p>
-            <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap</span></div>
+            <h3 class="project-title" data-i18n="projects.p7.title">Landing Page</h3>
+            <p class="project-desc" data-i18n="projects.p7.desc">Página web enfocada en captar clientes potenciales
+              mediante formularios estratégicos, diseño responsive y estructura orientada a conversión.</p>
+            <div class="project-tags"><span class="tag">Wordpress</span><span
+                class="tag">UX/UI</span></div>
           </div>
+          <!--
           <div class="project-footer">
             <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
               Ver proyecto
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
           </div>
+          -->
+        </article>
+
+        <!-- Proyecto 8: CMS Personalizado -->
+        <article class="project-card reveal">
+          <div class="project-slider">
+            <div class="slider-track">
+              <img src="img/img_proyectos/cmsweb.png" alt="CMS Personalizado pantalla 1"
+                class="slider-img active project-img" />
+              <img src="img/img_proyectos/cmsweb2.png" alt="CMS Personalizado pantalla 2"
+                class="slider-img project-img" />
+              <img src="img/img_proyectos/cmsweb3.png" alt="CMS Personalizado pantalla 3"
+                class="slider-img project-img" />
+            </div>
+            <button class="slider-btn slider-prev" aria-label="Anterior">&#8249;</button>
+            <button class="slider-btn slider-next" aria-label="Siguiente">&#8250;</button>
+            <div class="slider-dots">
+              <span class="slider-dot active"></span>
+              <span class="slider-dot"></span>
+              <span class="slider-dot"></span>
+              <span class="slider-dot"></span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="projects.p8.title">Página Web con CMS Personalizado</h3>
+            <p class="project-desc" data-i18n="projects.p8.desc">Sitio web dinámico con CMS a medida para administrar
+              noticias, documentos y horarios sin depender de conocimientos técnicos.</p>
+            <div class="project-tags"><span class="tag">Codeigniter</span><span class="tag">PHP</span><span
+                class="tag">JS</span><span class="tag">MySQL</spanc¿></div>
+          </div>
+          <!--
+          <div class="project-footer">
+            <a href="#" class="btn-primary text-sm" data-i18n="projects.view">
+              Ver proyecto
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+          -->
         </article>
 
       </div>
@@ -411,10 +586,9 @@
 
   <!-- CONTACTO – Diseño Reach Out -->
   <section id="contacto" class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <div class="section-header reveal">
         <h2 class="section-title" data-i18n="contact.title">¿Tienes un proyecto?</h2>
-        <p class="section-subtitle" data-i18n="contact.subtitle">Cuéntame tu idea. Respondo en menos de 24 horas.</p>
       </div>
 
       <!-- Tarjeta dividida -->
@@ -423,24 +597,29 @@
         <!-- ── Panel izquierdo: info ── -->
         <div class="reach-left">
           <div>
-            <p class="font-mono text-xs text-cyan-400 mb-2" data-i18n="contact.tag">// contacto</p>
             <h3 class="reach-heading">Escribeme</h3>
-            <p class="reach-subtext mt-3" data-i18n="contact.availSub">Proyectos freelance · Full-time</p>
           </div>
 
           <ul class="reach-info-list">
             <li class="reach-info-item">
               <span class="reach-info-icon reach-icon-green">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
               </span>
               <div>
                 <span class="reach-info-label">WhatsApp</span>
-                <a href="https://wa.me/51926172467" target="_blank" rel="noopener" class="reach-info-value hover:text-green-400 transition-colors duration-200">+51 926 172 467</a>
+                <a href="https://wa.me/51926172467" target="_blank" rel="noopener"
+                  class="reach-info-value hover:text-green-400 transition-colors duration-200">+51 926 172 467</a>
               </div>
             </li>
             <li class="reach-info-item">
               <span class="reach-info-icon reach-icon-cyan">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </span>
               <div>
                 <span class="reach-info-label">Email</span>
@@ -449,7 +628,11 @@
             </li>
             <li class="reach-info-item">
               <span class="reach-info-icon reach-icon-purple">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
               </span>
               <div>
                 <span class="reach-info-label">Ubicación</span>
@@ -458,17 +641,29 @@
             </li>
           </ul>
 
-          
+
 
           <div class="reach-social-row">
-            <a href="https://github.com/JackMG25" target="_blank" rel="noopener" class="reach-social-icon" aria-label="GitHub">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            <a href="https://github.com/JackMG25" target="_blank" rel="noopener" class="reach-social-icon"
+              aria-label="GitHub">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
             </a>
-            <a href="https://www.linkedin.com/in/jackmtmg/" target="_blank" rel="noopener" class="reach-social-icon" aria-label="LinkedIn">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <a href="https://www.linkedin.com/in/jackmtmg/" target="_blank" rel="noopener" class="reach-social-icon"
+              aria-label="LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
             </a>
-            <a href="https://www.instagram.com/jackmatosmogollon/" target="_blank" rel="noopener" class="reach-social-icon" aria-label="Instagram">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <a href="https://www.instagram.com/jackmatosmogollon/" target="_blank" rel="noopener"
+              class="reach-social-icon" aria-label="Instagram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
             </a>
             <!-- <a href="https://twitter.com/jack" target="_blank" rel="noopener" class="reach-social-icon" aria-label="Twitter / X">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -481,33 +676,56 @@
 
         <!-- ── Panel derecho: formulario ── -->
         <div class="reach-right">
-          <form id="contact-form" class="reach-form" novalidate>
+          <form id="contact-form" class="reach-form" action="https://formspree.io/f/mykbybdp" method="POST" accept-charset="UTF-8" novalidate>
+            <input type="hidden" id="formspree-subject" name="_subject" value="Nuevo mensaje desde tu portafolio" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" id="formspree-replyto" name="_replyto" value="" />
             <div class="reach-form-grid">
               <div class="form-group">
                 <label class="form-label" for="name" data-i18n="contact.f.name">Nombre</label>
-                <input type="text" id="name" name="name" class="form-input reach-input" placeholder="Tu nombre" required />
+                <input type="text" id="name" name="name" class="form-input reach-input" placeholder="Tu nombre"
+                  required />
               </div>
               <div class="form-group">
                 <label class="form-label" for="email" data-i18n="contact.f.email">Email</label>
-                <input type="email" id="email" name="email" class="form-input reach-input" placeholder="tu@email.com" required />
+                <input type="email" id="email" name="email" class="form-input reach-input" placeholder="tu@email.com"
+                  required />
               </div>
             </div>
             <div class="form-group">
               <label class="form-label" for="subject" data-i18n="contact.f.subject">Asunto</label>
-              <input type="text" id="subject" name="subject" class="form-input reach-input" placeholder="¿En qué puedo ayudarte?" required />
+              <input type="text" id="subject" name="subject" class="form-input reach-input"
+                placeholder="¿En qué puedo ayudarte?" required />
             </div>
-            
+
             <div class="form-group">
               <label class="form-label" for="message" data-i18n="contact.f.msg">Mensaje</label>
-              <textarea id="message" name="message" rows="4" class="form-input reach-input resize-none" placeholder="Describe tu proyecto o cualquier duda..." required></textarea>
+              <textarea id="message" name="message" rows="4" class="form-input reach-input resize-none"
+                placeholder="Describe tu proyecto o cualquier duda..." required></textarea>
             </div>
             <button type="submit" class="reach-submit-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.126A59.768 59.768 0 0 1 21.485 12 59.77 59.77 0 0 1 3.27 20.876L5.999 12Zm0 0h7.5" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M6 12 3.269 3.126A59.768 59.768 0 0 1 21.485 12 59.77 59.77 0 0 1 3.27 20.876L5.999 12Zm0 0h7.5" />
+              </svg>
               <span data-i18n="contact.f.send">Enviar mensaje</span>
             </button>
             <div id="form-success" class="form-success hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
               <span data-i18n="contact.f.success">¡Mensaje enviado! Te responderé pronto.</span>
+            </div>
+            <div id="form-error" class="form-success hidden bg-red-500/10 border border-red-500/30 text-red-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+              </svg>
+              <span data-i18n="contact.f.error">No se pudo enviar el mensaje. Intenta nuevamente.</span>
             </div>
           </form>
         </div>
@@ -518,17 +736,22 @@
 
   <!-- FOOTER -->
   <footer class="border-t border-gray-800/60 py-8 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-sm">
-      <span>&copy; <span id="year"></span> Jack  <span data-i18n="footer.role">Desarrollador de Software</span></span>
-      <span class="font-mono"><span data-i18n="footer.made">Hecho con</span> <span class="text-cyan-400">codigo</span> y &#9749;</span>
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 text-sm">
+      <span>&copy; <span id="year"></span> Jack <span data-i18n="footer.role">Desarrollador de Software</span></span>
+
     </div>
   </footer>
 
   <!-- BOTON VOLVER ARRIBA -->
-  <button id="back-to-top" aria-label="Volver arriba" class="fixed bottom-8 right-6 z-50 p-3 rounded-full bg-cyan-400 text-gray-950 shadow-lg shadow-cyan-400/30 opacity-0 pointer-events-none hover:bg-cyan-300 transition-all duration-300 translate-y-4">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  <button id="back-to-top" aria-label="Volver arriba"
+    class="fixed bottom-8 right-6 z-50 p-3 rounded-full bg-cyan-400 text-gray-950 shadow-lg shadow-cyan-400/30 opacity-0 pointer-events-none hover:bg-cyan-300 transition-all duration-300 translate-y-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
   </button>
 
   <script src="script.js"></script>
 </body>
+
 </html>
